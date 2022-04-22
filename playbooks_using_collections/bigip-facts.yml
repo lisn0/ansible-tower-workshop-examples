@@ -6,7 +6,6 @@
 
   collections:
     - f5networks.f5_modules
-
   tasks:
     - name: COLLECT BIG-IP FACTS
       bigip_device_info:
