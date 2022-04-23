@@ -6,19 +6,17 @@
 
   collections:
     - f5networks.f5_modules
-    
+
   tasks:
     - name: Setting up provider values
       set_fact:
        provider:
         server: "{{inventory_hostname}}"
         validate_certs: "False"
-  
+
     - name: CREATE NODES
       bigip_node:
         provider: "{{provider}}"
-        host: "{{ansible_host}}"
-        name: "{{inventory_hostname}}"
-      loop: "{{ groups['web'] }}"
-
-  
+        host: 192.168.20.50
+        name: serv2
+      loop: "{{ groups['bigips'] }}"
