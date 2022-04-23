@@ -1,6 +1,6 @@
 ---
 - name: GRAB F5 FACTS
-  hosts: 192.168.221.133
+  hosts: all
   gather_facts: false
 
   collections:
@@ -21,10 +21,3 @@
       debug:
         var: device_facts
 
-    - name: DISPLAY ONLY THE MAC ADDRESS
-      debug:
-        var: device_facts['system_info']['base_mac_address']
-
-    - name: DISPLAY ONLY THE VERSION
-      debug:
-        var: device_facts['system_info']['product_version']
